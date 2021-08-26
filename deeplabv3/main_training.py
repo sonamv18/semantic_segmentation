@@ -75,7 +75,7 @@ def main(data_dir, dest_dir, num_classes, batch_size, num_epochs, keep_feature_e
     model_deeplabv3_state_dict, hist = train_model(model_deeplabv3, num_classes, dataloaders_dict, criterion, optimizer_ft, device, dest_dir, num_epochs=num_epochs)
 
     print("Save ...")
-    torch.save(model_deeplabv3_state_dict, os.path.join(dest_dir, "best_DeepLabV3_Skydiver.pth"))
+    torch.save(model_deeplabv3_state_dict, os.path.join(dest_dir, "best_DeepLabV3.pth"))
 
 
 def args_preprocess():
