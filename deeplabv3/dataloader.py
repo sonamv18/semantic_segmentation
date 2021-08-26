@@ -27,8 +27,8 @@ class DataLoaderSegmentation(torch.utils.data.dataset.Dataset):
             ])
         else:
             self.transforms = transforms.Compose([
-                    #transforms.RandomHorizontalFlip(),
-                    #transforms.RandomVerticalFlip(),
+                    transforms.RandomHorizontalFlip(),
+                    transforms.RandomVerticalFlip(),
                     # transforms.RandomResizedCrop((512, 512)),
                     transforms.RandomCrop((224, 224)),
                     transforms.ToTensor(),
@@ -64,7 +64,6 @@ class DataLoaderSegmentation(torch.utils.data.dataset.Dataset):
             label = label * 255
             #  Convert to int64 and remove second dimension
             label = label.long().squeeze()
-            print(img_path)
             return image, label
 
     def __len__(self):
